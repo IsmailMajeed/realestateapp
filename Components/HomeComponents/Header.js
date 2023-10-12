@@ -1,8 +1,9 @@
-import React, { useContext, useLayoutEffect, useRef, useState } from 'react';
-import { View, StyleSheet, Text, Image, ImageBackground, TouchableOpacity, TextInput, SafeAreaView, ScrollView } from 'react-native';
+import React, { useContext, useState } from 'react';
+import { View, StyleSheet, Text, TouchableOpacity, TextInput, SafeAreaView, ScrollView } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 import { FilterContext } from '../../Context/FiltersContext';
+import { Image, ImageBackground } from 'expo-image';
 
 export default function Header({ navigation }) {
   var logo = 'https://livechat.propsure.co/var/storagetheme/2023y/02/27/4/48e419a4721f6c3d80f64d6f1cbe6d11.png';
@@ -39,6 +40,7 @@ export default function Header({ navigation }) {
   return (
     <TouchableOpacity activeOpacity={1} onPress={() => setIsSearching(false)}>
       <ImageBackground
+        contentFit='fill'
         source={require('../../assets/Images/HeaderImage.png')}
         style={styles.backgroundImage}
       >

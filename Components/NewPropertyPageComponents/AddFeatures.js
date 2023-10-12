@@ -76,6 +76,7 @@ const AddFeatures = () => {
     setShowBottomSheet(false)
   }
 
+  console.log(featuresAndAmentities);
   return (
     <SafeAreaView style={{ backgroundColor: '#fff', height: height }}>
       <CustomHeader title='Features and Amentities' />

@@ -44,7 +44,7 @@ export default function DropdownOpt({ clicked, px = 0, kindType = 'Residential',
 
   const pagerRef = React.useRef(null);
   return (
-    <View style={{ flex: 0, height: 230 }}>
+    <View style={{ flex: 1, height: 230 }}>
       <View style={styles.optionsHeader}>
         <TouchableOpacity style={[styles.headerStyling, index === 0 && styles.selectedTitle]} onPress={() => handleTabPress(0)}>
           <Text style={styles.headerTitle}>Residential</Text>

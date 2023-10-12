@@ -5,6 +5,7 @@ import {
   View,
   Text,
   Animated,
+  KeyboardAvoidingView,
 } from 'react-native';
 import CustomHeader from '../Components/CustomHeader';
 import NewProperty from './NewProperty';
@@ -95,15 +96,22 @@ function AddProperty() {
           <Text style={styles.headingBelow}>Get the best value for your property in few steps</Text>
         </Animated.View>
 
-        <Animated.ScrollView
-          contentContainerStyle={{ paddingTop: HEADER_MAX_HEIGHT - 32 }}
-          scrollEventThrottle={16}
-          onScroll={Animated.event(
-            [{ nativeEvent: { contentOffset: { y: scrollY } } }],
-            { useNativeDriver: true },
-          )}>
-          <NewProperty />
-        </Animated.ScrollView>
+        <KeyboardAvoidingView
+          style={{ flex: 1 }}
+          behavior={Platform.OS === "ios" ? "padding" : "height"}
+          keyboardVerticalOffset={Platform.OS === "ios" ? 0 : 20}
+        >
+          <Animated.ScrollView
+            showsVerticalScrollIndicator={false}
+            contentContainerStyle={{ paddingTop: HEADER_MAX_HEIGHT - 32 }}
+            scrollEventThrottle={16}
+            onScroll={Animated.event(
+              [{ nativeEvent: { contentOffset: { y: scrollY } } }],
+              { useNativeDriver: true },
+            )}>
+            <NewProperty />
+          </Animated.ScrollView>
+        </KeyboardAvoidingView>
 
       </SafeAreaView>
 
@@ -160,8 +168,8 @@ const styles = StyleSheet.create({
   headerBackground: (bg) => ({
     position: bg === '#fff' ? 'absolute' : 'relative',
     // top: 0,
-    left: '73%',
-    // right: 0,
+    // left: '73%',
+    right: bg === '#fff' ? 0 : '100%',
     width: 113,
     // objectFit: 'contain',
     // width: null,

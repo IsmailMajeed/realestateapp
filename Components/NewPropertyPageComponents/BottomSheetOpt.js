@@ -16,7 +16,7 @@ const BottomSheetOpt = ({ show = false, onClose = () => { }, title = '', content
         onBackButtonPress={() => onClose(false)}
         onBackdropPress={() => onClose(false)}
       >
-        <View style={styles.bottomNavigationView}>
+        <View style={styles.bottomNavigationView(contents.length * 40 + 100)}>
           <View style={styles.bar(theme.primary)}></View>
           <SafeAreaView
             style={{
@@ -24,14 +24,18 @@ const BottomSheetOpt = ({ show = false, onClose = () => { }, title = '', content
               marginTop: 20,
               gap: 10
             }}>
-            <Text
-              style={{
-                fontWeight: '700',
-                fontSize: 15,
-                color: theme.text
-              }}>
-              {title}
-            </Text>
+            {
+              title && (
+                <Text
+                  style={{
+                    fontWeight: '700',
+                    fontSize: 15,
+                    color: theme.text
+                  }}>
+                  {title}
+                </Text>
+              )
+            }
             <ScrollView contentContainerStyle={styles.optContainer}>
               {
                 contents.map((content, index) => (
@@ -51,17 +55,18 @@ const BottomSheetOpt = ({ show = false, onClose = () => { }, title = '', content
 export default BottomSheetOpt;
 
 const styles = StyleSheet.create({
-  bottomNavigationView: {
+  bottomNavigationView: (height = 200) => ({
     backgroundColor: '#fff',
     width: '100%',
-    height: 300,
+    height: height,
+    // height: 'auto',
     justifyContent: 'center',
     paddingHorizontal: 20,
     borderTopLeftRadius: 30,
     borderTopRightRadius: 30,
-  },
+  }),
   optContainer: {
-    gap: 20,
+    gap: 23,
     marginTop: 10,
     paddingBottom: 10
   },

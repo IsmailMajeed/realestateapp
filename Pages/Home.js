@@ -5,7 +5,7 @@ import { useContext } from 'react';
 import { FilterContext } from '../Context/FiltersContext';
 
 export default function Home({ navigation }) {
-  const {isBuy} = useContext(FilterContext)
+  const { isBuy } = useContext(FilterContext)
 
   return (
     <ScrollView showsVerticalScrollIndicator={false} style={{ backgroundColor: 'white' }}>

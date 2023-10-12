@@ -1,6 +1,7 @@
 import { Dimensions, StyleSheet, Text, TextInput, TouchableOpacity } from 'react-native'
-import React from 'react'
+import React, { useContext } from 'react'
 import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { ThemeContext } from '../../Context/ThemeContext';
 
 const width = Dimensions.get('screen').width
 
@@ -15,6 +16,7 @@ const Input = ({
   value = '',
   onChangeText = () => { }
 }) => {
+  const { theme } = useContext(ThemeContext);
   return (
     <TouchableOpacity style={{
       borderWidth: 1,
@@ -22,19 +24,23 @@ const Input = ({
       borderRadius: 5,
     }} onPress={() => clicked()}>
       {
-        !editable ? (
-          <Text style={[styles.inputStyling, (position !== 'left' && { paddingHorizontal: 10 })]}>{placeholder}</Text>
-        ) : (
-          <TextInput
-            value={value}
-            style={[styles.inputStyling, position !== 'left' && { paddingHorizontal: 10, }]}
-            placeholder={placeholder}
-            editable={editable}
-            onChangeText={(text) => onChangeText(text)}
-            onTouchStart={() => { }}
-          // onPressOut={() => clicked()}
-          />
-        )
+        !editable ?
+          value ? (
+            <Text style={[styles.inputStyling(theme.text), (position !== 'left' && { paddingHorizontal: 10 })]}>{value}</Text>
+          ) : (
+            <Text style={[styles.inputStyling(), (position !== 'left' && { paddingHorizontal: 10 })]}>{placeholder}</Text>
+          )
+          : (
+            <TextInput
+              value={value}
+              style={[styles.inputStyling(), position !== 'left' && { paddingHorizontal: 10, }]}
+              placeholder={placeholder}
+              editable={editable}
+              onChangeText={(text) => onChangeText(text)}
+              onTouchStart={() => { }}
+            // onPressOut={() => clicked()}
+            />
+          )
       }
       <MaterialCommunityIcons
         style={[{
@@ -54,12 +60,12 @@ const Input = ({
 export default Input
 
 const styles = StyleSheet.create({
-  inputStyling: {
+  inputStyling: (color = 'lightgray') => ({
     // borderWidth: 1,
     // borderColor: '#e1e1e1',
     paddingHorizontal: 50,
     paddingVertical: 15,
-    color: 'lightgray'
+    color: color
     // borderRadius: 5,
-  }
+  })
 })

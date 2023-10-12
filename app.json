@@ -46,12 +46,11 @@
     },
     "extra": {
       "eas": {
-        "projectId": "53f7113a-ae0f-4a02-b60c-aa17eaed6af0"
+        "projectId": "fd9e8065-5ccd-44a4-97ca-8e44f646acb8"
       }
     },
-    "owner": "ismailmajeed21",
     "updates": {
-      "url": "https://u.expo.dev/53f7113a-ae0f-4a02-b60c-aa17eaed6af0"
+      "url": "https://u.expo.dev/fd9e8065-5ccd-44a4-97ca-8e44f646acb8"
     }
   }
 }

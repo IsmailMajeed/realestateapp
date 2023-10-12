@@ -1,4 +1,4 @@
-import { View, Text, PanResponder, Modal, Animated, Easing, TouchableOpacity, ScrollView } from 'react-native'
+import { View, Text, Animated, TouchableOpacity, ScrollView } from 'react-native'
 import { useEffect } from 'react'
 
 import { SlideModal } from 'react-native-slide-modal';

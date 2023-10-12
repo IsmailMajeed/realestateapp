@@ -17,5 +17,17 @@ export const Styles = StyleSheet.create({
     fontWeight: '700',
     fontSize: 16,
     color: '#37474F'
-  }
+  },
+  coverImgStyle: (color) => ({
+    backgroundColor: color,
+    color: '#fff',
+    fontSize: 12,
+    borderRadius: 5,
+    overflow: 'hidden',
+    position: 'absolute',
+    paddingHorizontal: 3,
+    paddingVertical: 1,
+    left: 5,
+    top: 3
+  })
 })

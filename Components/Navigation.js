@@ -23,6 +23,7 @@ import LikedPage from '../Pages/LikedPage';
 import ContactUs from '../Pages/ContactUs';
 import ImageView from './LoginedPageComponents/ImageView';
 import SelectPage from './SelectPage';
+import ChangeCoverScreen from './NewPropertyPageComponents/ChangeCoverScreen';
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -185,6 +186,11 @@ const Navigation = () => {
       <Stack.Screen
         name='Add Features'
         component={AddFeatures}
+      />
+
+      <Stack.Screen
+        name='Change Cover'
+        component={ChangeCoverScreen}
       />
 
       <Stack.Screen

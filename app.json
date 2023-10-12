@@ -1,0 +1,57 @@
+{
+  "expo": {
+    "name": "estateProject",
+    "slug": "estateProject",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/Images/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/Images/splash.jpeg",
+      "resizeMode": "cover",
+      "backgroundColor": "#ffffff"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "usesAppleSignIn": true,
+      "bundleIdentifier": "com.ismailmajeed2002.estateProject"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "package": "com.ismailmajeed2002.estateProject",
+      "permissions": [
+        "android.permission.RECORD_AUDIO"
+      ]
+    },
+    "plugins": [
+      "expo-apple-authentication",
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "The app accesses your photos to let you share them with your friends."
+        }
+      ]
+    ],
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "53f7113a-ae0f-4a02-b60c-aa17eaed6af0"
+      }
+    },
+    "owner": "ismailmajeed21",
+    "updates": {
+      "url": "https://u.expo.dev/53f7113a-ae0f-4a02-b60c-aa17eaed6af0"
+    }
+  }
+}

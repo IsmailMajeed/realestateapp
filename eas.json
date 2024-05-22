@@ -10,10 +10,12 @@
     },
     "preview": {
       "ios": {
-        "simulator": true
+        "simulator": true,
+        "image": "latest"
       },
       "android": {
-        "buildType": "apk"
+        "buildType": "apk",
+        "image": "latest"
       },
       "distribution": "internal",
       "channel": "preview"
